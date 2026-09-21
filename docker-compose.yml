@@ -1,0 +1,10 @@
+services:
+  producer:
+    build: ./producer
+    ports:
+      - "3001:80"
+
+  consumer:
+    build: ./consumer
+    ports:
+      - "8000:8000"
