@@ -1,0 +1,14 @@
+# Stop the Server container
+docker compose stop consumer
+
+# Start the Server container
+docker compose up consumer -d
+
+# View Jobs pending in Kafka
+docker exec demo-2-kafka-1 /opt/kafka/bin/kafka-consumer-groups.sh --bootstrap-server localhost:9092 --describe --group job-processors 2>/dev/null
+
+LOG-END: How many messages have been sent to the topic.
+
+CURRENT-OFFSET: How many messages the consumer has processed.
+
+LAG: Number of messages queued and waiting.

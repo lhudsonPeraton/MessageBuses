@@ -1,0 +1,2 @@
+# Restart the Server container
+docker compose stop consumer; sleep 1; docker compose up consumer -d
